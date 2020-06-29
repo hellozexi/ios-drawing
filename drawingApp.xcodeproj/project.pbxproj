@@ -15,6 +15,7 @@
 		827F2A7E24AAAA6C00C6D95A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827F2A7C24AAAA6C00C6D95A /* LaunchScreen.storyboard */; };
 		827F2A8924AAAA6C00C6D95A /* drawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2A8824AAAA6C00C6D95A /* drawingAppTests.swift */; };
 		827F2A9424AAAA6C00C6D95A /* drawingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2A9324AAAA6C00C6D95A /* drawingAppUITests.swift */; };
+		827F2AA224AAAE0600C6D95A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2AA124AAAE0600C6D95A /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		827F2A8F24AAAA6C00C6D95A /* drawingAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawingAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		827F2A9324AAAA6C00C6D95A /* drawingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawingAppUITests.swift; sourceTree = "<group>"; };
 		827F2A9524AAAA6C00C6D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827F2AA124AAAE0600C6D95A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				827F2A7A24AAAA6C00C6D95A /* Assets.xcassets */,
 				827F2A7C24AAAA6C00C6D95A /* LaunchScreen.storyboard */,
 				827F2A7F24AAAA6C00C6D95A /* Info.plist */,
+				827F2AA124AAAE0600C6D95A /* CustomButton.swift */,
 			);
 			path = drawingApp;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827F2AA224AAAE0600C6D95A /* CustomButton.swift in Sources */,
 				827F2A7624AAAA6800C6D95A /* ViewController.swift in Sources */,
 				827F2A7224AAAA6800C6D95A /* AppDelegate.swift in Sources */,
 				827F2A7424AAAA6800C6D95A /* SceneDelegate.swift in Sources */,
