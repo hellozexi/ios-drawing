@@ -16,6 +16,8 @@
 		827F2A8924AAAA6C00C6D95A /* drawingAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2A8824AAAA6C00C6D95A /* drawingAppTests.swift */; };
 		827F2A9424AAAA6C00C6D95A /* drawingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2A9324AAAA6C00C6D95A /* drawingAppUITests.swift */; };
 		827F2AA224AAAE0600C6D95A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2AA124AAAE0600C6D95A /* CustomButton.swift */; };
+		827F2AA424AAB8EC00C6D95A /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2AA324AAB8EC00C6D95A /* Path.swift */; };
+		827F2AA624AAB9AC00C6D95A /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F2AA524AAB9AC00C6D95A /* PathView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		827F2A9324AAAA6C00C6D95A /* drawingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawingAppUITests.swift; sourceTree = "<group>"; };
 		827F2A9524AAAA6C00C6D95A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		827F2AA124AAAE0600C6D95A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		827F2AA324AAB8EC00C6D95A /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		827F2AA524AAB9AC00C6D95A /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				827F2A7C24AAAA6C00C6D95A /* LaunchScreen.storyboard */,
 				827F2A7F24AAAA6C00C6D95A /* Info.plist */,
 				827F2AA124AAAE0600C6D95A /* CustomButton.swift */,
+				827F2AA324AAB8EC00C6D95A /* Path.swift */,
+				827F2AA524AAB9AC00C6D95A /* PathView.swift */,
 			);
 			path = drawingApp;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827F2AA424AAB8EC00C6D95A /* Path.swift in Sources */,
+				827F2AA624AAB9AC00C6D95A /* PathView.swift in Sources */,
 				827F2AA224AAAE0600C6D95A /* CustomButton.swift in Sources */,
 				827F2A7624AAAA6800C6D95A /* ViewController.swift in Sources */,
 				827F2A7224AAAA6800C6D95A /* AppDelegate.swift in Sources */,
