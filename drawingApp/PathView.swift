@@ -29,7 +29,7 @@ class PathView: UIView {
     public var stroke: CGFloat = CGFloat(1)
     
     //transparency of the path
-    public var transparency: CGFloat = CGFloat(1)
+    public var transparency: CGFloat = CGFloat(0.5)
     
     
     override func draw(_ rect: CGRect) {
@@ -59,11 +59,11 @@ class PathView: UIView {
         let numOfPoints = path.points.count
         let bezierPath = createQuadPath(path.points)
         bezierPath.lineWidth = self.stroke
-        bezierPath.stroke(with: .normal, alpha: path.transparency)
+        bezierPath.stroke(with: .normal, alpha: self.transparency)
         let startPoint = createPoint(path.points[0], self.stroke, 0, CGFloat(2 * Float.pi))
         let endPoint = createPoint(path.points[numOfPoints - 1], self.stroke, 0, CGFloat(2 * Float.pi))
-        startPoint.fill(with: .normal, alpha: currentPath!.transparency)
-        endPoint.fill(with: .normal, alpha: currentPath!.transparency)
+        startPoint.fill(with: .normal, alpha: self.transparency)
+        endPoint.fill(with: .normal, alpha: self.transparency)
     }
     
     private func createQuadPath(_ points: [CGPoint]) -> UIBezierPath {

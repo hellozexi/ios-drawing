@@ -9,7 +9,7 @@
 import UIKit
 class ViewController: UIViewController {
 
-    
+    var currentPath: Path?
     //color switch buttons
 
     
@@ -39,8 +39,16 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touchPoint = touches.first?.location(in: view) else { return }
-        let currentPath = Path(touchPoint, self.currentColor!, self.currentStroke, self.currentTransparency)
+        currentPath = Path(touchPoint, self.currentColor!, self.currentStroke, self.currentTransparency)
         pad.currentPath = currentPath
+        //print(pad.currentPath?.points)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touchPoint = touches.first?.location(in: view) else { return }
+        currentPath?.points.append(touchPoint)
+        pad.currentPath = currentPath
+        print(pad.currentPath?.points)
     }
     
 }
