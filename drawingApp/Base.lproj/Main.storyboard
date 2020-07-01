@@ -31,6 +31,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-fc-a4x" userLabel="UndoButton">
                                         <rect key="frame" x="337" y="0.0" width="37" height="30"/>
                                         <state key="normal" title="Undo"/>
+                                        <connections>
+                                            <action selector="undoPreviousPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2K-7K-vQL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

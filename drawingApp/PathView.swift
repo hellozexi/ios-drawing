@@ -51,7 +51,7 @@ class PathView: UIView {
         return bezierPath
     }
     
-    private func deletePreviousLine() {
+    func deletePreviousLine() {
         if(allPaths.count != 0) {
             var _: Path = (allPaths.popLast())!
         }

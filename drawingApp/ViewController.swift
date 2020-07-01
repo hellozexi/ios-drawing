@@ -54,6 +54,11 @@ class ViewController: UIViewController {
         pad.allPaths = []
     }
     
+    @IBAction func undoPreviousPath(_ sender: UIButton) {
+        pad.deletePreviousLine()
+    }
+    
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let path = currentPath {
             pad.allPaths.append(path)
