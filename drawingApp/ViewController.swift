@@ -48,7 +48,10 @@ class ViewController: UIViewController {
         guard let touchPoint = touches.first?.location(in: pad) else { return }
         currentPath?.points.append(touchPoint)
         pad.currentPath = currentPath
-        print(pad.currentPath?.points)
+        //print(pad.currentPath?.points)
+    }
+    @IBAction func clearAllPaths(_ sender: UIButton) {
+        pad.allPaths = []
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

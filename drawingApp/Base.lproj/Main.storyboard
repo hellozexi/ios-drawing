@@ -24,6 +24,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x2-Sd-R3W" userLabel="ClearButton">
                                         <rect key="frame" x="271" y="0.0" width="36" height="30"/>
                                         <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearAllPaths:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1U-0n-mpV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-fc-a4x" userLabel="UndoButton">
                                         <rect key="frame" x="337" y="0.0" width="37" height="30"/>
