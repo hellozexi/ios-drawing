@@ -43,30 +43,51 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-Wq-AJq" userLabel="RedButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToRed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lGd-Cs-xLf"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-va-sFn" userLabel="PinkButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToPink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lhh-4Q-J99"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZR-J6-dfs" userLabel="OrrangeButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="100" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToOrrange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aO0-iE-YqY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0I-FX-OTm" userLabel="YellowButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToYellow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5RV-F3-0b4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqn-Hs-9e9" userLabel="GreenButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="200" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToGreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cjb-H4-1EV"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AUj-k9-B6M" userLabel="BlueButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="250" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToBlue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pEt-1Q-Ber"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CsH-DF-L5Z" userLabel="PurpleButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="30" height="30"/>
                                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchToPurple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z3f-Cj-Z3Z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -103,6 +124,7 @@
                     </view>
                     <connections>
                         <outlet property="clearButton" destination="3x2-Sd-R3W" id="aRv-5c-F0r"/>
+                        <outlet property="colorSelectionButton" destination="rq6-SQ-MoU" id="ePY-CQ-vov"/>
                         <outlet property="pad" destination="4QN-or-Ny3" id="BFq-dv-mE7"/>
                         <outlet property="strokeSlider" destination="dVy-0i-v3V" id="94d-dg-Bwy"/>
                         <outlet property="undoButton" destination="RIL-fc-a4x" id="Bql-Jg-c9v"/>

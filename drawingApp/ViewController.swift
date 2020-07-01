@@ -10,8 +10,30 @@ import UIKit
 class ViewController: UIViewController {
 
     var currentPath: Path?
-    //color switch buttons
-
+    //color switch button
+    @IBOutlet weak var colorSelectionButton: ColorButton!
+    //color button event
+    @IBAction func switchToRed(_ sender: ColorButton) {
+        pad.color = UIColor.red
+    }
+    @IBAction func switchToPink(_ sender: ColorButton) {
+        pad.color = UIColor.systemPink
+    }
+    @IBAction func switchToOrrange(_ sender: ColorButton) {
+        pad.color = UIColor.orange
+    }
+    @IBAction func switchToYellow(_ sender: ColorButton) {
+        pad.color = UIColor.yellow
+    }
+    @IBAction func switchToGreen(_ sender: ColorButton) {
+        pad.color = UIColor.green
+    }
+    @IBAction func switchToBlue(_ sender: ColorButton) {
+        pad.color = UIColor.blue
+    }
+    @IBAction func switchToPurple(_ sender: ColorButton) {
+        pad.color = UIColor.purple
+    }
     
     
     //stroke slider
@@ -26,7 +48,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pad: PathView!
     //canvas to draw
    
-    let currentColor: UIColor? = UIColor.red
+    var currentColor: UIColor = UIColor.red
     let currentStroke: CGFloat = 0.0
     let currentTransparency: CGFloat = 0.0
     
@@ -39,8 +61,9 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touchPoint = touches.first?.location(in: pad) else { return }
-        currentPath = Path(touchPoint, self.currentColor!, self.currentStroke, self.currentTransparency)
+        currentPath = Path(touchPoint, pad.color, self.currentStroke, self.currentTransparency)
         pad.currentPath = currentPath
+        //pad.currentPath?.color = pad.color
         //print(pad.currentPath?.points)
     }
     
@@ -62,7 +85,6 @@ class ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let path = currentPath {
             pad.allPaths.append(path)
-            self.currentPath = nil
             pad.currentPath = nil
         }
     }

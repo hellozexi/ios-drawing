@@ -23,31 +23,34 @@ class PathView: UIView {
         }
     }
     //color of the path
-    public var color: UIColor = UIColor.red
+    public var color: UIColor = UIColor.black
     
     //stroke of the path
-    public var stroke: CGFloat = CGFloat(1)
+    public var stroke: CGFloat = CGFloat(20)
     
     //transparency of the path
     public var transparency: CGFloat = CGFloat(0.5)
     
     
     override func draw(_ rect: CGRect) {
-        if let thePath = currentPath {
-            drawPath(thePath)
-        }
         for path in allPaths {
             drawPath(path)
         }
+        if let thePath = currentPath {
+            thePath.color = self.color
+            drawPath(thePath)
+        }
+        
     }
     
     private func midpoint(first: CGPoint, second: CGPoint) -> CGPoint {
         return CGPoint(x: (first.x + second.x)/2, y: (first.y + second.y)/2)
     }
     
-    private func createPoint(_ point: CGPoint, _ radius: CGFloat, _ startAngle: CGFloat, _ endAngle: CGFloat) -> UIBezierPath {
+    private func createPoint(_ point: CGPoint, _ color: UIColor, _ radius: CGFloat, _ startAngle: CGFloat, _ endAngle: CGFloat) -> UIBezierPath {
         let bezierPath = UIBezierPath()
         bezierPath.addArc(withCenter: point, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        color.setFill()
         return bezierPath
     }
     
@@ -60,10 +63,15 @@ class PathView: UIView {
     private func drawPath(_ path: Path) {
         let numOfPoints = path.points.count
         let bezierPath = createQuadPath(path.points)
+        let pathColor = path.color
+        pathColor.setStroke()
         bezierPath.lineWidth = self.stroke
         bezierPath.stroke(with: .normal, alpha: self.transparency)
-        let startPoint = createPoint(path.points[0], self.stroke / 2, 0, CGFloat(2 * Float.pi))
-        let endPoint = createPoint(path.points[numOfPoints - 1], self.stroke / 2, 0, CGFloat(2 * Float.pi))
+        
+        
+        let startPoint = createPoint(path.points[0], pathColor, self.stroke / 2, 0, CGFloat(2 * Float.pi))
+        let endPoint = createPoint(path.points[numOfPoints - 1], pathColor, self.stroke / 2, 0, CGFloat(2 * Float.pi))
+        //pathColor.setFill()
         startPoint.fill(with: .normal, alpha: self.transparency)
         endPoint.fill(with: .normal, alpha: self.transparency)
     }
