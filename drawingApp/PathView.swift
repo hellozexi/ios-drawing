@@ -36,7 +36,9 @@ class PathView: UIView {
         if let thePath = currentPath {
             drawPath(thePath)
         }
-        
+        for path in allPaths {
+            drawPath(path)
+        }
     }
     
     private func midpoint(first: CGPoint, second: CGPoint) -> CGPoint {
@@ -60,8 +62,8 @@ class PathView: UIView {
         let bezierPath = createQuadPath(path.points)
         bezierPath.lineWidth = self.stroke
         bezierPath.stroke(with: .normal, alpha: self.transparency)
-        let startPoint = createPoint(path.points[0], self.stroke, 0, CGFloat(2 * Float.pi))
-        let endPoint = createPoint(path.points[numOfPoints - 1], self.stroke, 0, CGFloat(2 * Float.pi))
+        let startPoint = createPoint(path.points[0], self.stroke / 2, 0, CGFloat(2 * Float.pi))
+        let endPoint = createPoint(path.points[numOfPoints - 1], self.stroke / 2, 0, CGFloat(2 * Float.pi))
         startPoint.fill(with: .normal, alpha: self.transparency)
         endPoint.fill(with: .normal, alpha: self.transparency)
     }

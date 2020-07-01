@@ -38,17 +38,25 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touchPoint = touches.first?.location(in: view) else { return }
+        guard let touchPoint = touches.first?.location(in: pad) else { return }
         currentPath = Path(touchPoint, self.currentColor!, self.currentStroke, self.currentTransparency)
         pad.currentPath = currentPath
         //print(pad.currentPath?.points)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touchPoint = touches.first?.location(in: view) else { return }
+        guard let touchPoint = touches.first?.location(in: pad) else { return }
         currentPath?.points.append(touchPoint)
         pad.currentPath = currentPath
         print(pad.currentPath?.points)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let path = currentPath {
+            pad.allPaths.append(path)
+            self.currentPath = nil
+            pad.currentPath = nil
+        }
     }
     
 }
