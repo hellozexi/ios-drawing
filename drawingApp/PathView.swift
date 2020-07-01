@@ -10,30 +10,33 @@ import Foundation
 import UIKit
 
 class PathView: UIView {
-    var path: Path? {
+    
+    public var currentPath: Path? {
         didSet {
             setNeedsDisplay()
         }
     }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.clear
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public var allPaths: [Path] = [] {
+        didSet {
+            setNeedsDisplay()
+        }
     }
+    //color of the path
+    public var color: UIColor = UIColor.red
+    
+    //stroke of the path
+    public var stroke: CGFloat = CGFloat(1)
+    
+    //transparency of the path
+    public var transparency: CGFloat = CGFloat(1)
+    
     
     override func draw(_ rect: CGRect) {
-        let bezierPath = createQuadPath(path!.points)
-        bezierPath.lineWidth = path!.stroke
-        path!.color.setStroke()
-        bezierPath.stroke(with: .normal, alpha: path!.transparency)
-        let startPoint = createPoint(path!.points[0], path!.stroke, 0, CGFloat(2 * Float.pi))
-        let endPoint = createPoint(path!.points[path!.points.count - 1], path!.stroke, 0, CGFloat(2 * Float.pi))
-        path!.color.setFill()
-        startPoint.fill(with: .normal, alpha: path!.transparency)
-        endPoint.fill(with: .normal, alpha: path!.transparency)
+        if let thePath = currentPath {
+            drawPath(thePath)
+        }
+        
     }
     
     private func midpoint(first: CGPoint, second: CGPoint) -> CGPoint {
@@ -44,6 +47,23 @@ class PathView: UIView {
         let bezierPath = UIBezierPath()
         bezierPath.addArc(withCenter: point, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         return bezierPath
+    }
+    
+    private func deletePreviousLine() {
+        if(allPaths.count != 0) {
+            var _: Path = (allPaths.popLast())!
+        }
+    }
+    
+    private func drawPath(_ path: Path) {
+        let numOfPoints = path.points.count
+        let bezierPath = createQuadPath(path.points)
+        bezierPath.lineWidth = self.stroke
+        bezierPath.stroke(with: .normal, alpha: path.transparency)
+        let startPoint = createPoint(path.points[0], self.stroke, 0, CGFloat(2 * Float.pi))
+        let endPoint = createPoint(path.points[numOfPoints - 1], self.stroke, 0, CGFloat(2 * Float.pi))
+        startPoint.fill(with: .normal, alpha: currentPath!.transparency)
+        endPoint.fill(with: .normal, alpha: currentPath!.transparency)
     }
     
     private func createQuadPath(_ points: [CGPoint]) -> UIBezierPath {

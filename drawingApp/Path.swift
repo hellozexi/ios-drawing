@@ -15,8 +15,8 @@ class Path {
     var color: UIColor
     var transparency: CGFloat
     
-    init(startPoint point: CGPoint, color: UIColor, stroke: CGFloat, transparency: CGFloat) {
-        self.points = [point]
+    init(_ startPoint: CGPoint, _ color: UIColor, _ stroke: CGFloat, _ transparency: CGFloat) {
+        self.points = [startPoint]
         self.color = color
         self.stroke = stroke
         self.transparency = transparency
