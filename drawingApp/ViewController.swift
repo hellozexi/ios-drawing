@@ -9,6 +9,9 @@
 import UIKit
 class ViewController: UIViewController {
 
+    @IBAction func changeStroke(_ sender: UISlider) {
+        pad.stroke = CGFloat(sender.value) * 18
+    }
     var currentPath: Path?
     //color switch button
     
@@ -70,9 +73,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var pad: PathView!
     //canvas to draw
    
-    var currentColor: UIColor = UIColor.red
-    let currentStroke: CGFloat = 0.0
-    let currentTransparency: CGFloat = 0.0
     
     
     override func viewDidLoad() {
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touchPoint = touches.first?.location(in: pad) else { return }
-        currentPath = Path(touchPoint, pad.color, self.currentStroke, self.currentTransparency)
+        currentPath = Path(touchPoint, pad.color, pad.stroke, pad.transparency)
         pad.currentPath = currentPath
         //pad.currentPath?.color = pad.color
         //print(pad.currentPath?.points)

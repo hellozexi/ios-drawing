@@ -26,7 +26,7 @@ class PathView: UIView {
     public var color: UIColor = UIColor.black
     
     //stroke of the path
-    public var stroke: CGFloat = CGFloat(20)
+    public var stroke: CGFloat = CGFloat(10)
     
     //transparency of the path
     public var transparency: CGFloat = CGFloat(1)
@@ -64,16 +64,18 @@ class PathView: UIView {
         let numOfPoints = path.points.count
         let bezierPath = createQuadPath(path.points)
         let pathColor = path.color
+        let pathStroke = path.stroke
+        let pathTransparency = path.transparency
         pathColor.setStroke()
-        bezierPath.lineWidth = self.stroke
-        bezierPath.stroke(with: .normal, alpha: self.transparency)
+        bezierPath.lineWidth = pathStroke
+        bezierPath.stroke(with: .normal, alpha: pathTransparency)
         
         
-        let startPoint = createPoint(path.points[0], pathColor, self.stroke / 2, 0, CGFloat(2 * Float.pi))
-        let endPoint = createPoint(path.points[numOfPoints - 1], pathColor, self.stroke / 2, 0, CGFloat(2 * Float.pi))
+        let startPoint = createPoint(path.points[0], pathColor, pathStroke / 2, 0, CGFloat(2 * Float.pi))
+        let endPoint = createPoint(path.points[numOfPoints - 1], pathColor, pathStroke / 2, 0, CGFloat(2 * Float.pi))
         //pathColor.setFill()
-        startPoint.fill(with: .normal, alpha: self.transparency)
-        endPoint.fill(with: .normal, alpha: self.transparency)
+        startPoint.fill(with: .normal, alpha: pathTransparency)
+        endPoint.fill(with: .normal, alpha: pathTransparency)
     }
     
     private func createQuadPath(_ points: [CGPoint]) -> UIBezierPath {
