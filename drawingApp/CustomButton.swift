@@ -11,25 +11,29 @@ import UIKit
 class CustomButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupButton()
+        setup()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
+        setup()
     }
     
-    func setupButton() {
-        setupShadow()
-        layer.cornerRadius = layer.frame.width / 2
+    private func setup() {
+        //setupShadow()
+        if (self.layer.frame.width <= self.layer.frame.height){
+            self.layer.cornerRadius = self.layer.frame.width/2
+        } else {
+            self.layer.cornerRadius = self.layer.frame.height/2
+        }
     }
     
-    func setupShadow() {
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 8
-        layer.shadowOpacity = 0.5
-        clipsToBounds = true
-        layer.masksToBounds = false
+    private func setupShadow() {
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 8
+        self.layer.shadowOpacity = 0.5
+        self.clipsToBounds = true
+        self.layer.masksToBounds = false
     }
 }

@@ -15,7 +15,6 @@ class PathView: UIView {
             setNeedsDisplay()
         }
     }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.clear
@@ -26,26 +25,28 @@ class PathView: UIView {
     }
     
     override func draw(_ rect: CGRect) {
-        let bezierPath = createQuadPath(points: path!.points)
+        let bezierPath = createQuadPath(path!.points)
         bezierPath.lineWidth = path!.stroke
         path!.color.setStroke()
         bezierPath.stroke(with: .normal, alpha: path!.transparency)
-        let start = UIBezierPath()
-        let end = UIBezierPath()
-        start.addArc(withCenter: path!.points[0], radius: path!.stroke, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
-        start.addArc(withCenter: path!.points[0], radius: path!.stroke, startAngle: 0, endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let startPoint = createPoint(path!.points[0], path!.stroke, 0, CGFloat(2 * Float.pi))
+        let endPoint = createPoint(path!.points[path!.points.count - 1], path!.stroke, 0, CGFloat(2 * Float.pi))
         path!.color.setFill()
-        start.fill(with: .normal, alpha: path!.transparency)
-        end.fill(with: .normal, alpha: path!.transparency)
+        startPoint.fill(with: .normal, alpha: path!.transparency)
+        endPoint.fill(with: .normal, alpha: path!.transparency)
     }
     
     private func midpoint(first: CGPoint, second: CGPoint) -> CGPoint {
         return CGPoint(x: (first.x + second.x)/2, y: (first.y + second.y)/2)
     }
     
+    private func createPoint(_ point: CGPoint, _ radius: CGFloat, _ startAngle: CGFloat, _ endAngle: CGFloat) -> UIBezierPath {
+        let bezierPath = UIBezierPath()
+        bezierPath.addArc(withCenter: point, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
+        return bezierPath
+    }
     
-    
-    private func createQuadPath(points: [CGPoint]) -> UIBezierPath {
+    private func createQuadPath(_ points: [CGPoint]) -> UIBezierPath {
      let path = UIBezierPath() //Create the path object
      if(points.count < 2){ //There are no points to add to this path
      return path
