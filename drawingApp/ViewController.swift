@@ -11,28 +11,50 @@ class ViewController: UIViewController {
 
     var currentPath: Path?
     //color switch button
+    
     @IBOutlet weak var colorSelectionButton: ColorButton!
     //color button event
     @IBAction func switchToRed(_ sender: ColorButton) {
         pad.color = UIColor.red
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     @IBAction func switchToPink(_ sender: ColorButton) {
         pad.color = UIColor.systemPink
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     @IBAction func switchToOrrange(_ sender: ColorButton) {
         pad.color = UIColor.orange
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     @IBAction func switchToYellow(_ sender: ColorButton) {
         pad.color = UIColor.yellow
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     @IBAction func switchToGreen(_ sender: ColorButton) {
         pad.color = UIColor.green
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     @IBAction func switchToBlue(_ sender: ColorButton) {
         pad.color = UIColor.blue
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     @IBAction func switchToPurple(_ sender: ColorButton) {
         pad.color = UIColor.purple
+        let indicatorX = sender.frame.maxX - colorSelectionButton.frame.width/2 + 25
+        let indicatorY = colorSelectionButton.frame.origin.y
+        colorSelectionButton.frame.origin = CGPoint(x:indicatorX, y: indicatorY)
     }
     
     

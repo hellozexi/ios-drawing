@@ -29,7 +29,7 @@ class PathView: UIView {
     public var stroke: CGFloat = CGFloat(20)
     
     //transparency of the path
-    public var transparency: CGFloat = CGFloat(0.5)
+    public var transparency: CGFloat = CGFloat(1)
     
     
     override func draw(_ rect: CGRect) {
