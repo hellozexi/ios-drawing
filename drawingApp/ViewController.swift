@@ -8,7 +8,10 @@
 
 import UIKit
 class ViewController: UIViewController {
-
+    @IBAction func changeTransparency(_ sender: UISlider) {
+        pad.transparency = CGFloat(sender.value)
+    }
+    
     @IBAction func changeStroke(_ sender: UISlider) {
         pad.stroke = CGFloat(sender.value) * 18
     }
@@ -73,10 +76,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var pad: PathView!
     //canvas to draw
    
+    @IBOutlet weak var transparencySlider: UISlider!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        transparencySlider.value = 1
         // Do any additional setup after loading the view.
         //redButton.setupButton()
     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,34 +12,34 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="drawingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="k10-r0-uhK" userLabel="Top">
-                                <rect key="frame" x="20" y="54" width="374" height="30"/>
+                                <rect key="frame" x="20" y="54" width="335" height="30"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dVy-0i-v3V" userLabel="StrokeBar">
-                                        <rect key="frame" x="-2" y="0.0" width="173" height="31"/>
+                                        <rect key="frame" x="-2" y="0.0" width="140" height="31"/>
                                         <connections>
                                             <action selector="changeStroke:" destination="BYZ-38-t0r" eventType="valueChanged" id="fIi-SO-ge7"/>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x2-Sd-R3W" userLabel="ClearButton">
-                                        <rect key="frame" x="199" y="0.0" width="42" height="30"/>
+                                        <rect key="frame" x="166" y="0.0" width="36" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearAllPaths:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1U-0n-mpV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wG-QO-JfB">
-                                        <rect key="frame" x="271" y="0.0" width="36" height="30"/>
+                                        <rect key="frame" x="232" y="0.0" width="36" height="30"/>
                                         <state key="normal" title="Redo"/>
                                         <connections>
                                             <action selector="redoPreviousPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYB-mB-VTC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-fc-a4x" userLabel="UndoButton">
-                                        <rect key="frame" x="337" y="0.0" width="37" height="30"/>
+                                        <rect key="frame" x="298" y="0.0" width="37" height="30"/>
                                         <state key="normal" title="Undo"/>
                                         <connections>
                                             <action selector="undoPreviousPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2K-7K-vQL"/>
@@ -48,7 +48,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tjv-xZ-Q3R" userLabel="Bottom">
-                                <rect key="frame" x="42" y="802" width="330" height="30"/>
+                                <rect key="frame" x="22.666666666666657" y="718" width="330" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRh-Wq-AJq" userLabel="RedButton" customClass="ColorButton" customModule="drawingApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -102,7 +102,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq6-SQ-MoU" userLabel="ColorSelectionButton" customClass="ColorButton" customModule="drawingApp">
-                                <rect key="frame" x="55" y="851" width="5" height="5"/>
+                                <rect key="frame" x="55" y="767" width="5" height="5"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="5" id="NNO-4b-i42"/>
@@ -110,23 +110,43 @@
                                 </constraints>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4QN-or-Ny3" userLabel="PathView" customClass="PathView" customModule="drawingApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="414" height="668"/>
+                                <rect key="frame" x="0.0" y="94" width="375" height="564"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KHX-fb-3Wb">
+                                <rect key="frame" x="40" y="666" width="295" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transparency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKY-Te-na8">
+                                        <rect key="frame" x="0.0" y="0.0" width="108.66666666666667" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bRw-K1-OSW">
+                                        <rect key="frame" x="136.66666666666663" y="0.0" width="160.33333333333337" height="31"/>
+                                        <connections>
+                                            <action selector="changeTransparency:" destination="BYZ-38-t0r" eventType="valueChanged" id="e2R-PP-MOK"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4QN-or-Ny3" secondAttribute="trailing" id="5BT-RS-BnB"/>
                             <constraint firstItem="rq6-SQ-MoU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="6ap-Qb-jF2"/>
                             <constraint firstItem="4QN-or-Ny3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BOp-rM-Ul1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4QN-or-Ny3" secondAttribute="bottom" constant="80" id="DPB-fn-2qg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4QN-or-Ny3" secondAttribute="bottom" constant="120" id="DPB-fn-2qg"/>
                             <constraint firstItem="rq6-SQ-MoU" firstAttribute="top" secondItem="tjv-xZ-Q3R" secondAttribute="bottom" constant="19" id="EXw-rz-B6M"/>
-                            <constraint firstItem="4QN-or-Ny3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M7s-vK-sRu"/>
+                            <constraint firstItem="4QN-or-Ny3" firstAttribute="top" secondItem="k10-r0-uhK" secondAttribute="bottom" constant="10" id="Ldg-cN-j0L"/>
+                            <constraint firstItem="KHX-fb-3Wb" firstAttribute="top" secondItem="4QN-or-Ny3" secondAttribute="bottom" constant="8" symbolic="YES" id="UXU-kF-6Ak"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KHX-fb-3Wb" secondAttribute="trailing" constant="40" id="XAE-3Z-rZm"/>
                             <constraint firstItem="4QN-or-Ny3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xlk-RN-s5h"/>
                             <constraint firstItem="k10-r0-uhK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aHM-em-L1K"/>
                             <constraint firstItem="k10-r0-uhK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gMc-Ud-H7f"/>
                             <constraint firstItem="k10-r0-uhK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="kER-ir-1ZB"/>
                             <constraint firstItem="tjv-xZ-Q3R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kQ9-I3-bMn"/>
+                            <constraint firstItem="KHX-fb-3Wb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="lti-X9-8db"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tjv-xZ-Q3R" secondAttribute="bottom" constant="30" id="nF4-3e-MLL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k10-r0-uhK" secondAttribute="trailing" constant="20" id="pgM-uE-v5k"/>
                         </constraints>
@@ -137,12 +157,13 @@
                         <outlet property="colorSelectionButton" destination="rq6-SQ-MoU" id="ePY-CQ-vov"/>
                         <outlet property="pad" destination="4QN-or-Ny3" id="BFq-dv-mE7"/>
                         <outlet property="strokeSlider" destination="dVy-0i-v3V" id="94d-dg-Bwy"/>
+                        <outlet property="transparencySlider" destination="bRw-K1-OSW" id="M0e-xU-MxF"/>
                         <outlet property="undoButton" destination="RIL-fc-a4x" id="Bql-Jg-c9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
+            <point key="canvasLocation" x="130.40000000000001" y="137.4384236453202"/>
         </scene>
     </scenes>
 </document>
