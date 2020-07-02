@@ -22,6 +22,9 @@ class PathView: UIView {
             setNeedsDisplay()
         }
     }
+    
+    var deletedPaths: [Path] = []
+    
     //color of the path
     public var color: UIColor = UIColor.black
     
@@ -54,9 +57,17 @@ class PathView: UIView {
         return bezierPath
     }
     
-    func deletePreviousLine() {
+    func deletePreviousPath() {
         if(allPaths.count != 0) {
-            var _: Path = (allPaths.popLast())!
+            let temp: Path = allPaths.popLast()!
+            deletedPaths.append(temp)
+        }
+    }
+    
+    func recoverPreviousPath() {
+        if(deletedPaths.count != 0) {
+            let temp: Path = deletedPaths.popLast()!
+            allPaths.append(temp)
         }
     }
     

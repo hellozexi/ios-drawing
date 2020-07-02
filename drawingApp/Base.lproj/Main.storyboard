@@ -19,16 +19,23 @@
                                 <rect key="frame" x="20" y="54" width="374" height="30"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dVy-0i-v3V" userLabel="StrokeBar">
-                                        <rect key="frame" x="-2" y="0.0" width="245" height="31"/>
+                                        <rect key="frame" x="-2" y="0.0" width="173" height="31"/>
                                         <connections>
                                             <action selector="changeStroke:" destination="BYZ-38-t0r" eventType="valueChanged" id="fIi-SO-ge7"/>
                                         </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x2-Sd-R3W" userLabel="ClearButton">
-                                        <rect key="frame" x="271" y="0.0" width="36" height="30"/>
+                                        <rect key="frame" x="199" y="0.0" width="42" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearAllPaths:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1U-0n-mpV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wG-QO-JfB">
+                                        <rect key="frame" x="271" y="0.0" width="36" height="30"/>
+                                        <state key="normal" title="Redo"/>
+                                        <connections>
+                                            <action selector="redoPreviousPath:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MYB-mB-VTC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIL-fc-a4x" userLabel="UndoButton">
